@@ -1,52 +1,61 @@
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.game-board {
-    width: 100%;
-    height: 659px;
-    border-bottom: 15px solid rgb(7, 73, 7);
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+.background {
+    background-image: url(./assets/background.png);
+    height: 80vh;
+    width: 100vw;
+    z-index: 1;
+    position: fixed;
+    background-size: contain;
+    background-repeat: repeat-x;
+    animation: background-animation 50s linear infinite;
+}
+
+.bottom-background {
+    background-image: url(./assets/bottom-background.png);
+    height: 40vh;
+    width: 100vw;
+    bottom: 15px;
+    z-index: 2;
+    position: fixed;
+    background-size: contain;
+    background-repeat: repeat-x;
+    animation: background-animation 20s linear infinite;
+}
+
+.ground {
+    background-image: url(./assets/ground.png);
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 15px;
+    z-index: 3;
 }
 
 .pipe {
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    bottom: 15px;
     width: 80px;
     right: -80px;
-    animation: pipe-animation 3s infinite linear; 
-
+    animation: pipe-animation 3s infinite linear;
+    z-index: 9;
 }
 
 .mario {
     width: 150px;
     position: absolute;
-    bottom: 0%;
-   
-
+    bottom: 15px;
+    z-index: 10;
 }
 
 .jump {
     animation: jump 500ms ease-out;
-    
-
-    
 }
 
-.clouds {
-    position: absolute;
-    bottom: 29%;
-    width: 1000px;
-    animation: clouds-animation 10s infinite linear;
-
-
-}
 
 @keyframes pipe-animation {
     from {
@@ -66,30 +75,30 @@
     }
 
     40% {
-        bottom:  180px;
+        bottom: 180px;
     }
 
     50% {
-        bottom:  180px;
-    
+        bottom: 180px;
+
     }
 
     60% {
-        bottom:  180px;
-    
+        bottom: 180px;
+
     }
 
-    100% { 
+    100% {
         bottom: 0;
     }
 }
 
-@keyframes clouds-animation {
-    from{
-        right: 300px;
+@keyframes background-animation {
+    from {
+        background-position: 0 0;
     }
 
-    to{
-        right: 0;
+    to {
+        background-position: -100vw 0;
     }
 }
