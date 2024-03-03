@@ -41,7 +41,7 @@
     bottom: 15px;
     width: 80px;
     right: -80px;
-    animation: pipe-animation 3s infinite linear;
+    animation: pipe-animation 2s infinite linear;
     z-index: 9;
 }
 
