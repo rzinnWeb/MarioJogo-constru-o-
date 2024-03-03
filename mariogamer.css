@@ -102,3 +102,10 @@
         background-position: -100vw 0;
     }
 }
+
+#pontos{
+    margin: 0 auto;
+    text-align: center;
+    font-size: xx-large;
+    font-family: sans-serif;
+}
