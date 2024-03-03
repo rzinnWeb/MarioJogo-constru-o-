@@ -2,6 +2,7 @@ const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const background = document.querySelector('.background');
 const bottomBackground = document.querySelector('.bottom-background');
+var pontos = 0.0;
 
 
 const jump = () => {
@@ -20,7 +21,7 @@ const loop = setInterval(() => {
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '')
 
 
-
+    Math.random
     if (pipePosition < 120 && pipePosition > 0 && marioPosition < 80) {
 
         pipe.style.animation = 'none';
@@ -36,7 +37,15 @@ const loop = setInterval(() => {
         mario.style.marginLeft = '50px'
 
         clearInterval(loop);
+        
     }
+
+
+    
+        pontos += 0.1
+        document.getElementById('pontos').innerHTML = "Pontos: " + parseInt(pontos)
+    
+    
 
 }, 10);
 
